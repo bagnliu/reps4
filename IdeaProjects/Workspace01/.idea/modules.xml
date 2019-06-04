@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/DtWeb/DtWeb.iml" filepath="$PROJECT_DIR$/DtWeb/DtWeb.iml" />
-      <module fileurl="file://$PROJECT_DIR$/StaticWeb/StaticWeb.iml" filepath="$PROJECT_DIR$/StaticWeb/StaticWeb.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Stu01/Stu01.iml" filepath="$PROJECT_DIR$/Stu01/Stu01.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Stu02/Stu02.iml" filepath="$PROJECT_DIR$/Stu02/Stu02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/maven_myServlet/maven_myServlet.iml" filepath="$PROJECT_DIR$/maven_myServlet/maven_myServlet.iml" />
     </modules>
   </component>
 </project>
