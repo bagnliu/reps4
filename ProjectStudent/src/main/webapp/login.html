@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>运动会管理系统</title>
+  <link rel="stylesheet" media="screen" href="css/base.css">
+  <link rel="stylesheet" type="text/css" href="css/login.css"/>
+</head>
+<body>
+
+<div id="particles-js">
+	<div class="login">
+		<!--用户注册-->
+		<div class="register">
+			<div class="login-top">用户注册</div>
+			<div class="login-center clearfix">
+				<div class="login-center-img"><img src="images/name.png"/></div>
+				<div class="login-center-input">
+					<input type="text" name="register-name" value="" placeholder="请输入您的姓名" onfocus="this.placeholder=''" onblur="this.placeholder='请输入您的姓名'"/>
+					<div class="login-center-input-text">姓名</div>
+				</div>
+			</div>
+			<div class="login-center clearfix">
+				<div class="login-center-img"><img src="images/college.png"/></div>
+				<div class="login-center-input">
+					<input type="text" name="register-college" value="" placeholder="请输入您的学院" onfocus="this.placeholder=''" onblur="this.placeholder='请输入您的学院'"/>
+					<div class="login-center-input-text">学院</div>
+				</div>
+			</div>
+			<div class="login-center clearfix">
+				<div class="login-center-img"><img src="images/num.png"/></div>
+				<div class="login-center-input">
+					<input type="text" name="register-num" value="" placeholder="请输入您的学号" onfocus="this.placeholder=''" onblur="this.placeholder='请输入您的学号'"/>
+					<div class="login-center-input-text">学号</div>
+				</div>
+			</div>
+			<div class="login-center clearfix">
+				<div class="login-center-img"><img src="images/password.png"/></div>
+				<div class="login-center-input">
+					<input type="password" name="register-password" value="" placeholder="请输入您的密码" onfocus="this.placeholder=''" onblur="this.placeholder='请输入您的密码'"/>
+					<div class="login-center-input-text">密码</div>
+				</div>
+			</div>
+			<!--管理员登陆-->
+			<div class="login-button register-login-button">注册登录</div>
+			<div class="switch-name register-switch-name">管理员登录</div>
+		</div>
+		<!--管理员登陆-->
+		<div class="admin">
+			<div class="login-top">管理员登录</div>
+			<div class="login-center clearfix">
+				<div class="login-center-img"><img src="images/name.png"/></div>
+				<div class="login-center-input">
+					<input type="text" name="admin-name" value="" placeholder="请输入您的用户名" onfocus="this.placeholder=''" onblur="this.placeholder='请输入您的用户名'"/>
+					<div class="login-center-input-text">用户名</div>
+				</div>
+			</div>
+			<div class="login-center clearfix">
+				<div class="login-center-img"><img src="images/card.png"/></div>
+				<div class="login-center-input">
+					<input type="text" name="admin-card" value="" placeholder="请输入您的身份证号" onfocus="this.placeholder=''" onblur="this.placeholder='请输入您的身份证号'"/>
+					<div class="login-center-input-text">身份证号</div>
+				</div>
+			</div>
+			<div class="login-center clearfix">
+				<div class="login-center-img"><img src="images/password.png"/></div>
+				<div class="login-center-input">
+					<input type="password" name="admin-password" value="" placeholder="请输入您的密码" onfocus="this.placeholder=''" onblur="this.placeholder='请输入您的密码'"/>
+					<div class="login-center-input-text">密码</div>
+				</div>
+			</div>
+			<!--管理员登陆-->
+			<div class="login-button admin-login-button">登录</div>
+			<div class="switch-name admin-switch-name">用户注册</div>
+		</div>
+	</div>
+</div>
+
+<!-- 特效插件，若不需要注释即可 -->
+<!--<script src="js/particles.min.js"></script>
+<script src="js/app.js"></script>-->
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript">
+		$(function() {
+			/*点击右下角管理员登录*/
+			$(".register-switch-name").click(function() {
+				$(".admin").show();
+				$(".register").hide();
+			});
+			/*点击右下角用户注册*/
+			$(".admin-switch-name").click(function() {
+				$(".admin").hide();
+				$(".register").show();
+			});
+
+			/*用户注册登录*/
+			$(".register-login-button")
+					.click(
+							function() {
+								var name = $("input[name='register-name']").val();
+								var college = $("input[name='register-college']").val();
+								var num = $("input[name='register-num']").val();
+								var password = $("input[name='register-password']").val();
+								if (name == "" || college == "" || num == ""
+										|| password == "") {
+									alert("数据不能为空");
+								} else {
+									$
+											.ajax({
+												url : "RegServlet", //处理页面的路径
+												type : "POST", //提交方式
+												data : {
+													"name" : name,
+													"college" : college,
+													"num" : num,
+													"password" : password
+												},
+												success : function(data) { //回调函数 ,成功时返回的数据存在形参data里
+													alert("注册成功!");
+													window.location.href = "./index.html?id=1&num="+num;
+												}
+											});
+								}
+							});
+			/*用户注册登录*/
+			$(".admin-login-button").click(function() {
+				var name = $("input[name='admin-name']").val();
+				var card = $("input[name='admin-card']").val();
+				var password = $("input[name='admin-password']").val();
+				if (name == "" || card == "" || password == "") {
+					alert("不能爲空");
+				} else {
+					$.ajax({
+						url : "LogServlet", //处理页面的路径
+						type : "POST", //提交方式
+						data : {
+							"name" : name,
+							"card" : card,
+							"password" : password
+						},
+						success : function(data) { //回调函数 ,成功时返回的数据存在形参data里
+							var data =  JSON.parse(data)
+							if (data.code == "1") {
+								alert("用戶名或者密碼錯誤!");
+							} else {
+								alert("登录成功!");
+								window.location.href = "./index.html?id=2";
+							}
+						}
+					});
+				}
+			});
+		});
+	</script>
+</body>
+</html>

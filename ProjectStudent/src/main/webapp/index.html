@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>江西应用科技学院校运会报名</title>
+    <link rel="stylesheet" media="screen" href="css/base.css">
+    <link rel="stylesheet" media="screen" href="css/index.css">
+</head>
+<body>
+    <div class="content">
+        <!--banner-->
+        <div class="top">
+            <img src="./images/backgroundImg.jpg" alt=""/>
+            <div class="title">江西应用科技学院校运会</div>
+        </div>
+        <!--学生 nav-->
+        <div class="nav student_nav">
+            <ul class="clearfix">
+                <li class="run_enroll">
+                    <a href="javascript:void(0);">
+                        <img src="./images/nav_athletes.png" alt=""/>
+                        <p>运动员报名</p>
+                    </a>
+                </li>
+                <li class="run_volunteer">
+                    <a href="javascript:void(0);">
+                        <img src="./images/nav_volunteer.png" alt=""/>
+                        <p>志愿者报名</p>
+                    </a>
+                </li>
+                <li class="result_select">
+                    <a href="javascript:void(0);">
+                        <img src="./images/nav_achievement.png" alt=""/>
+                        <p>成绩查询</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!--管理员 nav-->
+        <div class="nav admin_nav">
+            <ul class="clearfix">
+                <li class="admin_enter">
+                    <a href="javascript:void(0);">
+                        <img src="./images/nav_achievement.png" alt=""/>
+                        <p>成绩录入</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!--footer-->
+        <div class="footer">
+            <p>电话：xxxxxxxx &nbsp;&nbsp;&nbsp; 邮箱：xxxxxxxxx</p>
+            <p>地址：江西应用科技学院</p>
+            <p>江西应用科技学院</p>
+            <p>备案号：xxxxxxxxx</p>
+        </div>
+        <!--mask 弹窗背景-->
+        <div class="mask close"></div>
+
+        <!--学生 运动员报名弹窗-->
+        <div class="maskContent">
+            <div class="close">X</div>
+            <form method="post">
+                <div class="group">
+                    <h2>一、男子项目</h2>
+                    <input type="checkbox" name="boy_100m" value="男子100米"><span>男子100米</span><br>
+                    <input type="checkbox" name="boy_800m" value="男子800米"><span>男子800米</span><br>
+                    <input type="checkbox" name="boy_5000m" value="男子5000米"><span>男子5000米</span><br>
+                    <input type="checkbox" name="boy_relay" value="男子4*100米接力赛"><span>男子4*100米接力赛</span><br>
+                    <input type="checkbox" name="boy_height" value="男子跳高"><span>男子跳高</span><br>
+                    <input type="checkbox" name="boy_long" value="男子跳远"><span>男子跳远</span><br>
+                </div>
+                <div class="group">
+                    <h2>二、女子项目</h2>
+                    <div>
+                        <input type="checkbox" name="girl_100m" value="女子100米"><span>女子100米</span><br>
+                        <input type="checkbox" name="girl_400m" value="女子400米"><span>女子400米</span><br>
+                        <input type="checkbox" name="girl_2000m" value="女子2000米"><span>女子2000米</span><br>
+                        <input type="checkbox" name="girl_relay" value="女子4*100米接力赛"><span>女子4*100米接力赛</span><br>
+                        <input type="checkbox" name="girl_height" value="女子跳高"><span>女子跳高</span><br>
+                        <input type="checkbox" name="girl_long" value="女子跳远"><span>女子跳远</span><br>
+                    </div>
+                </div>
+                <button class="btn run_btn">提交</button>
+            </form>
+        </div>
+
+        <!--学生 志愿者报名弹窗-->
+        <div class="volunteerContent">
+            <div class="close">X</div>
+            <form method="post">
+                <div class="group">
+                    <h2>志愿者报名</h2>
+                    <div>
+                        <input type="checkbox" name="volunteer_court" value="赛场志愿服务"><span>赛场志愿服务</span><br>
+                        <input type="checkbox" name="volunteer_waiting" value="候场志愿服务"><span>候场志愿服务</span><br>
+                        <input type="checkbox" name="volunteer_logistics" value="后勤志愿服务"><span>后勤志愿服务</span><br>
+                    </div>
+                </div>
+                <button class="btn run_btn">提交</button>
+            </form>
+        </div>
+
+        <!--学生 成绩查询-->
+        <div class="reaultContent">
+            <div class="close">X</div>
+            <div class="group">
+                <h2>成绩查询</h2>
+                <div class="select_condition">
+                    <select name="reault_select" class="reault_select" id="">
+                        <option value="">请选择</option>
+                        <option value="男子100米成绩">男子100米成绩</option>
+                        <option value="男子800米成绩">男子800米成绩</option>
+                        <option value="男子5000米成绩">男子5000米成绩</option>
+                        <option value="男子跳高成绩">男子跳高成绩</option>
+                        <option value="男子跳远成绩">男子跳远成绩</option>
+                        <option value="男子4*100米接力赛">男子4*100米接力赛</option>
+                        <option value="女子100米成绩">女子100米成绩</option>
+                        <option value="女子400米成绩">女子400米成绩</option>
+                        <option value="女子2000米成绩">女子2000米成绩</option>
+                        <option value="女子跳高成绩">女子跳高成绩</option>
+                        <option value="女子跳远成绩">女子跳远成绩</option>
+                        <option value="女子4*100米接力赛">女子4*100米接力赛</option>
+                    </select>
+                    <button class="btn" id="condition_btn">查询</button>
+                </div>
+                <table border="1" cellpadding="10" cellspacing="10">
+                    <tr>
+                        <th colspan="4" class="title select_conditionTitle">暂无数据</th>
+                    </tr>
+                    <tr>
+                        <th>名次</th>
+                        <th>成绩</th>
+                        <th>姓名</th>
+                        <th>学院</th>
+                    </tr>
+                    <tbody class="select_conditionContent">
+                    <tr>
+                        <td>暂无数据</td>
+                        <td>暂无数据</td>
+                        <td>暂无数据</td>
+                        <td>暂无数据</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!--管理员 成绩录入-->
+        <div class="adminContent">
+            <div class="close">X</div>
+            <form method="post">
+                <div class="group">
+                    <h2>成绩录入</h2>
+                    <span>赛事项目:</span><input type="text" class="admin_project" name="admin_project" placeholder="请输入赛事项目" value=""><br>
+                    <span>运动员姓名:</span><input type="text" class="admin_name" name="admin_name" placeholder="请输入运动员姓名" value=""><br>
+                    <span>运动员学院:</span><input type="text" class="admin_college" name="admin_college" placeholder="请输入运动员学院" value=""><br>
+                    <span>成绩:</span><input type="text" class="admin_achievement" name="admin_achievement" placeholder="请输入成绩" value=""><br>
+                    <span>排名:</span><input type="text" class="admin_ranking" name="admin_ranking" placeholder="请输入排名" value=""><br>
+                </div>
+                <button class="btn" id="admin_btn">提交</button>
+            </form>
+        </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
